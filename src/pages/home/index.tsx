@@ -1,5 +1,5 @@
 import { ArrowSquareOut, Buildings, GithubLogo, Users } from "phosphor-react";
-import { Container, GitHubAccount, GitHubAccountDescriptions, Posts, PostsHeader, ProfileContainer, ProfileInfo } from "./styles";
+import { Container, GitHubAccount, GitHubAccountDescriptions, Post, PostHeader, Posts, PostsHeader, PostsInfo, PostsList, ProfileContainer, ProfileInfo } from "./styles";
 
 export function Home() {
   return (
@@ -34,11 +34,32 @@ export function Home() {
 
         <Posts>
           <PostsHeader>
-            <h3>Publicações</h3>
-            <span>6 publicações</span>
+            <PostsInfo>
+              <h3>Publicações</h3>
+              <span>6 publicações</span>
+            </PostsInfo>
+            <input placeholder="Buscar conteúdo" />
           </PostsHeader>
-          <input placeholder="Buscar conteúdo" />
-          <div></div>
+          <PostsList>
+            {Array.from({ length: 6 }).map(post => {
+              return (
+                <Post>
+                  <PostHeader>
+                    <h2>JavaScript data types and data structures</h2>
+                    <span>Há 1 dia</span>
+                  </PostHeader>
+                  <p>Programming languages all have built-in data structures, but these often differ from one language to another. This article attempts to list the built-in data structures available in JavaScript and what properties they have. These can be used to build other data structures. Wherever possible, comparisons with other languages are drawn.
+
+                    Dynamic typing
+                    JavaScript is a loosely typed and dynamic language. Variables in JavaScript are not directly associated with any particular value type, and any variable can be assigned (and re-assigned) values of all types:
+
+                    let foo = 42; // foo is now a number
+                    foo = 'bar'; // foo is now a string
+                    foo = true; // foo is now a boolean</p>
+                </Post>
+              )
+            })}
+          </PostsList>
         </Posts>
       </main>
     </Container>

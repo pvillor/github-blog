@@ -11,6 +11,8 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     gap: 4.5rem;
+    margin-top: -6rem;
+    padding-bottom: 2rem;
   }
 `
 
@@ -21,7 +23,6 @@ export const ProfileContainer = styled.div`
   gap: 2rem;
 
   padding: 2rem;
-  margin-top: -6rem;
 
   background-color: ${props => props.theme['base-profile']};
 
@@ -89,9 +90,16 @@ export const ProfileInfo = styled.div`
 export const Posts = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 3rem;
 `
 
 export const PostsHeader = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+`
+
+export const PostsInfo = styled.div`
   display: flex;
   justify-content: space-between;
 
@@ -104,5 +112,59 @@ export const PostsHeader = styled.div`
   span {
     font-size: 14px;
     color: ${props => props.theme['base-span']};
+  }
+`
+
+export const PostsList = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+`
+
+export const Post = styled.div`
+  width: 26rem;
+  padding: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+
+  border-radius: 10px;
+  background-color: ${props => props.theme['base-post']};
+  line-height: 160%;
+
+  max-height: 16.25rem;
+
+  p {
+    font-size: 1rem;
+    font-weight: 400;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+  }
+
+  &:hover {
+    box-shadow: 0 0 0 2px ${props => props.theme['base-label']};
+    cursor: pointer;
+  }
+`
+
+export const PostHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+
+  h2 {
+    font-size: 1.25rem;
+    color: ${props => props.theme['base-title']};
+  }
+
+  span {
+    font-size: 14px;
+    color: ${props => props.theme['base-span']};
+    font-weight: 400;
+    white-space: nowrap;
   }
 `
