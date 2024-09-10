@@ -87,7 +87,7 @@ export const ProfileInfo = styled.div`
   }
 `
 
-export const Posts = styled.div`
+export const PostsContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 3rem;
@@ -134,7 +134,7 @@ export const PostsList = styled.div`
   gap: 2rem;
 `
 
-export const Post = styled.div`
+export const PostContainer = styled.div`
   width: 26rem;
   padding: 2rem;
 
