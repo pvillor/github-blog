@@ -97,6 +97,19 @@ export const PostsHeader = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+
+  input {
+    color: ${props => props.theme['base-text']};
+    background-color: ${props => props.theme['base-input']};
+    border: 1px solid ${props => props.theme['base-border']};
+    border-radius: 6px;
+
+    padding: 0.75rem 1rem;
+  }
+
+  &::placeholder {
+    color: ${props => props.theme['base-label']};
+  }
 `
 
 export const PostsInfo = styled.div`

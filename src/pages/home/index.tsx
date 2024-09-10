@@ -1,7 +1,14 @@
 import { ArrowSquareOut, Buildings, GithubLogo, Users } from "phosphor-react";
 import { Container, GitHubAccount, GitHubAccountDescriptions, Post, PostHeader, Posts, PostsHeader, PostsInfo, PostsList, ProfileContainer, ProfileInfo } from "./styles";
+import { useNavigate } from "react-router-dom";
 
 export function Home() {
+  const navigate = useNavigate();
+
+  function handleOpenPost(issue: number) {
+    navigate(`/posts/${issue}`)
+  }
+
   return (
     <Container>
       <main>
@@ -11,7 +18,7 @@ export function Home() {
             <GitHubAccountDescriptions>
               <GitHubAccount>
                 <h1>Paulo Victor Guerra</h1>
-                <a href="https://github.com/pvillor" target="_blank">GITHUB <ArrowSquareOut size={12} weight="fill" /></a>
+                <a href="https://github.com/pvillor" target="_blank">GITHUB <ArrowSquareOut size={12} weight="bold" /></a>
               </GitHubAccount>
               <h2>Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu viverra massa quam dignissim aenean malesuada suscipit. Nunc, volutpat pulvinar vel mass.</h2>
             </GitHubAccountDescriptions>
@@ -41,9 +48,9 @@ export function Home() {
             <input placeholder="Buscar conteúdo" />
           </PostsHeader>
           <PostsList>
-            {Array.from({ length: 6 }).map(post => {
+            {Array.from({ length: 6 }).map((_, index) => {
               return (
-                <Post>
+                <Post key={index + 1} onClick={() => handleOpenPost(index)}>
                   <PostHeader>
                     <h2>JavaScript data types and data structures</h2>
                     <span>Há 1 dia</span>
